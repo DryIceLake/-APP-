@@ -1,6 +1,6 @@
 <template>
 <div class="header">
-    <div class="header-left">
+    <div class="header-left" >
         <span class="iconfont bigger">&#xe6f2;</span>
     </div>
     <div class="header-input">
@@ -13,19 +13,38 @@
 
 <script>
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll () {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      if (scrollTop <= 200) {
+        document.querySelector('.header').style.backgrounColor = `rgba(255,198,6,0)`
+      } else {
+        document.querySelector('.header').style.backgrounColor = `rgba(255,198,6,1)`
+      }
+    }
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
   .header {
+      width: 100%;
       color: #fff;
       height: .47rem;
       line-height: .47rem;
       display: flex;
-      background-color: $bgColor;
+      background-color: rgba(255,198,6,0);
       font-size: .14rem;
+      position: fixed;
+      z-index: 2;
   }
   .header-left {
       width: .4rem;
