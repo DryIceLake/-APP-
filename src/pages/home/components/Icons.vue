@@ -2,7 +2,7 @@
   <div class="icons">
     <swiper>
       <swiper-slide v-for="(page, index) of pages" :key="index">
-        <div class="icon" v-for="item of iconList" :key="item.id">
+        <div class="icon" v-for="item of list" :key="item.id">
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl">
           </div>
@@ -15,29 +15,21 @@
 <script>
 export default {
   name: 'HomeIcons',
-  data () {
-    return {
-      iconList: [{
-        id: '0001',
-        imgUrl: 'https://image2.suning.cn/uimg/cms/img/155074220498300857.png',
-        desc: '手机爆款'
-      }, {
-        id: '0002',
-        imgUrl: 'https://image2.suning.cn/uimg/cms/img/154708800857670247.png',
-        desc: '苏宁超市'
-      }]
-    }
+  props: {
+    list: Array
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
-        const page = Math.floor(index / 10)
-        if (!pages[page]) {
-          pages[page] = []
-        }
-        pages[page].push(item)
-      })
+      if (this.list) {
+        this.list.forEach((item, index) => {
+          const page = Math.floor(index / 10)
+          if (!pages[page]) {
+            pages[page] = []
+          }
+          pages[page].push(item)
+        })
+      }
       return pages
     }
   }

@@ -5,7 +5,7 @@
     </div>
     <div class="header-input">
         <span class="iconfont">&#xe62d;</span>
-        苏宁易购 空调
+        {{this.language}}
     </div>
     <div class="header-right">登录</div>
 </div>
@@ -14,6 +14,9 @@
 <script>
 export default {
   name: 'HomeHeader',
+  props: {
+    language: String
+  },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
