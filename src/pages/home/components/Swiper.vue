@@ -21,7 +21,7 @@ export default {
         imgUrl: 'https://image2.suning.cn/uimg/aps/material/155058120028429292.jpg'
       }, {
         id: '0002',
-        imgUrl: "https://image1.suning.cn/uimg/aps/material/156371100357707416.jpg"
+        imgUrl: 'https://image1.suning.cn/uimg/aps/material/156371100357707416.jpg'
       }, {
         id: '0003',
         imgUrl: 'https://image2.suning.cn/uimg/aps/material/155058120060465377.jpg'
@@ -42,7 +42,7 @@ export default {
     width: 100%
     height: 0
     overflow: hidden
-    padding-bottom: 50%
+    padding-bottom: 45%
     background: #eee
   .swiper-img
     width: 100%
