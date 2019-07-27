@@ -41,7 +41,8 @@ export default {
   .icons >>> .swiper-container
     overflow: hidden
     height: 0
-    padding-bottom: 40%
+    padding-bottom: 55%
+    background-color: #fff;
   .icon
     position: relative
     overflow: hidden
@@ -49,6 +50,7 @@ export default {
     width: 20%
     height: 0
     padding-bottom: 20%
+    margin-top: 5%
   .icon-img
     position: absolute
     top: 0
@@ -58,6 +60,7 @@ export default {
     box-sizing: border-box
   .icon-img-content
     width: 60%
+    height: 85%
     margin: 0 auto
   .icon-desc
     position: absolute

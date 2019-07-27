@@ -3,15 +3,21 @@
   <home-header :language="language"></home-header>
   <home-swiper :list="swiperList"></home-swiper>
   <home-icons :list="iconsList"></home-icons>
-  <recommend-title></recommend-title>
+  <ad-component></ad-component>
+  <ad-imagation></ad-imagation>
+  <blank-bar></blank-bar>
+  <recommend></recommend>
 </div>
 </template>
 
 <script>
+import BlankBar from './components/BlankBar'
 import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
-import RecommendTitle from './components/recommend/recomtitle'
+import AdComponent from './components/AdComponent'
+import AdImagation from './components/AdImagation'
+import Recommend from './components/Recommend'
 import axios from 'axios'
 export default {
   name: 'Home',
@@ -19,7 +25,10 @@ export default {
     HomeHeader,
     HomeSwiper,
     HomeIcons,
-    RecommendTitle
+    Recommend,
+    AdComponent,
+    AdImagation,
+    BlankBar
   },
   data () {
     return {
